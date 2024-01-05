@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root{
+    /* ### Primary */
+
+--Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+--Red: hsl(0, 100%, 66%);
+
+/* ### Neutral */
+
+--White: hsl(0, 0%, 100%);
+--Light-grayish-violet: hsl(270, 3%, 87%);
+--Dark-grayish-violet: hsl(279, 6%, 55%);
+--Very-dark-violet: hsl(278, 68%, 11%);
+}
+*{
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+body{
+    background-image: url("./interactive-card-details-form-main/images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+   /* background-size: contain;  */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+/* card 1  */
+.card-1{
+    /* margin-right: 100px; */
+    background-image: url("./interactive-card-details-form-main/images/bg-card-front.png");
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 20px 30px;
+    display: block;
+    margin-bottom: 20px;
+}
+.big-circle{
+    padding: 20px;
+    background-color: var(--White);
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.outline-circle{
+    margin: 0 0px 8px 10px;
+    padding: 10px;
+    border: 1px solid var(--White);
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    
+}
+.code{
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+.code > .num{
+    color: var(--White);
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+.name{
+    display: flex;
+    justify-content: space-between;
+    color: var(--White);
+    font-size: 15px;
+}
+.name > .jane{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.cvc{
+    display: flex;
+}
+
+
+/* card 2  */
+
+.card-2{
+    margin-left: 100px;
+    background-image: url("./interactive-card-details-form-main/images/bg-card-back.png");
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 20px 30px;
+    display: block;
+}
+.card-2 > .zero , .card-2 > #cvc-output {
+    justify-content: right;
+    display: flex;
+    padding-right: 40px;
+    padding-top: 90px;
+    color: var(--White);
+    letter-spacing: 3px;
+}
+.name-fill > #name-input:hover, .name-fill > #number-input:hover
+,.input > .month-time > #month:hover, .input > .year-time > #year:hover
+, .date-fill > #cvc:hover{
+    border: 1px solid hsl(278, 94%, 30%);
+}
+/* form  */
+.form{
+    margin: 100px 100px 0 100px;
+   
+}
+.name-fill{
+    display: flex;
+    flex-direction: column;
+}
+.name-fill > label{
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--Very-dark-violet);
+    
+}
+.date-fill > label{
+    font-size: 10px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--Very-dark-violet);
+}
+.input{
+    display: flex;
+    gap: 5px;
+}
+.input > .month-time > #month, .input > .year-time > #year{
+    width: 70px;
+    padding: 10px;
+    border: 1px solid var(--Dark-grayish-violet);
+    border-radius: 5px;
+}
+.name-fill > input {
+    margin-bottom: 0px;
+    padding: 10px;
+    border: 1px solid var(--Dark-grayish-violet);
+    border-radius: 5px;
+    width: 320px;
+}
+.name-fill > input::placeholder {
+    color: var(--Dark-grayish-violet);
+}
+.name-fill > .card-number{
+    padding-top: 15px;
+}
+.date{
+    margin-top: 15px;
+    display: flex;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+.date-fill{
+    display: flex;
+    flex-direction: column;
+}
+.date-fill > .input >.date-time  {
+    width: 70px;
+    padding: 10px;
+    border: 1px solid var(--Dark-grayish-violet);
+    border-radius: 5px;
+    
+}
+.date-fill > .cvc{
+    width: 150px;
+    padding: 10px;
+    border: 1px solid var(--Dark-grayish-violet);
+    border-radius: 5px;
+   
+}
+
+.btn , .btn-continue{
+    padding: 10px;
+    width: 320px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--Very-dark-violet);
+    color: var(--White);
+}
+.btn:hover , .btn-continue:hover{
+    cursor: pointer;
+    background-image: linear-gradient( hsl(249, 99%, 64%) , hsl(278, 94%, 30%));
+}
+#wrong, #wrong-name, #wrong-month, #wrong-year, #wrong-cvc
+,#empty-name, #empty-number, #empty-month, #empty-year, #empty-cvc{
+    color: var(--Red);
+    font-size: 12px;
+}
+#number{
+    color: var(--White);
+    font-size: 30px;
+    letter-spacing: 3.5px;
+}
+#name-output{
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* complete  */
+.complete{
+    text-align: center;
+    margin: 100px 100px 0 100px;
+    display: none;
+    flex-direction: column;
+}
+.complete > img {
+    width: 80px;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+.complete > .thank {
+    text-transform: uppercase;
+    padding: 30px 0;
+    font-size: 25px;
+    letter-spacing: 5px;
+    color: var(--Very-dark-violet);
+    font-weight: 600;
+}
+.complete > .detail{
+    padding-bottom: 40px;
+    color: var(--Dark-grayish-violet);
+}
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+/* Apply shake animation on the button when there is an error */
+.shake-button {
+    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    background-color: var(--Red);
+}
+/* 1100px  */
+@media screen and (max-width: 1100px){
+    body{
+        background-size: 40% 100%;
+    }
+    .container{
+        width: 800px;
+    }
+    .card-1{
+        margin-left: 120px;
+    }
+    .card-2{
+        margin-left: 170px;
+    }
+    .name-fill > #name-input, 
+    .name-fill > #number-input,.btn{
+        width: 180px;
+    }
+.input > .month-time > #month, 
+.input > .year-time > #year
+, .date-fill > #cvc{
+    width: 50px;
+}
+.date-fill > label{
+    
+    letter-spacing: normal;
+}
+}
+
+@media screen and (max-width: 800px){
+    .container{
+        width: 600px;
+        flex-direction: column;
+    }
+    body{
+        background-image: url("./interactive-card-details-form-main/images/bg-main-mobile.png");
+        background-size: 100% 40%; /* Set the width to 50% and auto for the height */
+        background-repeat: no-repeat;
+		
+    }
+    .card{
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+    }
+
+    .card-1{
+       top: 150px;
+       position: absolute;
+       /* margin-right: 00px; */
+       left: -100px;
+    }
+   .card-2{
+    margin-bottom: 200px;
+   }
+   .form{
+    margin: 0px 0px 0 50px;
+}
+.name-fill > #name-input, 
+    .name-fill > #number-input,.btn{
+        width: 500px;
+    }
+    .input > .month-time > #month, 
+    .input > .year-time > #year
+    , .date-fill > #cvc{
+        width: 157px;
+    }
+
+    .complete{
+        text-align: center;
+        margin: 0px 0px 0 50px;
+        display: none;
+        flex-direction: column;
+    }
+    .complete > .btn-continue{
+       margin-left: auto;
+       margin-right: auto;
+       padding: 10px;
+       width: 320px;
+       border: none;
+       border-radius: 5px;
+       background-color: var(--Very-dark-violet);
+       color: var(--White);
+    }
+ 
+    }
+
+    @media screen and (max-width: 600px){
+        .container{
+            width: 400px;
+        }
+        .card-1{
+            top: 150px;
+            position: absolute;
+            /* margin-right: 00px; */
+            left: -95px;
+         }
+        .card-2{
+            left: -120px;
+            position: relative;
+         
+        }
+        .form, .complete{
+            margin: 0px 0px 0 30px;
+        }
+        .name-fill > #name-input, 
+            .name-fill > #number-input,.btn{
+                width: 350px;
+            }
+        .input > .month-time > #month, 
+            .input > .year-time > #year
+            , .date-fill > #cvc{
+                width: 107px;
+            }
+         .card-1{
+                /* margin-right: 100px; */
+               
+                width: 350px;
+                height: 200px;
+                background-size: cover;
+                padding: 20px 30px;
+              
+                /* margin-bottom: 20px; */
+            }
+        .card-2{
+            width: 350px;
+            height: 200px;
+            background-size: cover;
+        }
+        .code{
+            padding-top: 50px;
+        }
+        #number{
+            font-size: 20px;
+        }
+        .code > .num{
+            
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+        .card-2 > .zero , .card-2 > #cvc-output {
+            padding-right: 20px;
+            padding-top: 70px;
+        }
+
+    }
+
+    @media screen and (max-width: 400px){
+        .container{
+            width: 300px;
+        }
+        .card-1{
+            top: 100px;
+            position: absolute;
+            /* margin-right: 00px; */
+            left: -120px;
+         }
+        .card-2{
+            left: -150px;
+            position: relative;
+         
+        }
+        .form, .complete{
+            margin: 0px;
+        }
+        .name-fill > #name-input, 
+            .name-fill > #number-input,.btn{
+                width: 300px;
+            }
+        .input > .month-time > #month, 
+            .input > .year-time > #year
+            , .date-fill > #cvc{
+                width: 90px;
+            }
+         .card-1{
+                /* margin-right: 100px; */
+               
+                width: 300px;
+                height: 180px;
+              
+               
+              
+                /* margin-bottom: 20px; */
+            }
+        .card-2{
+            width: 300px;
+            height: 180px;
+            
+        }
+        .code{
+            padding-top: 50px;
+        }
+        #number{
+            font-size: 14px;
+        }
+        .code > .num{
+            
+            font-size: 14px;
+            letter-spacing: 3px;
+        }
+        .card-2 > .zero , .card-2 > #cvc-output {
+            padding-right: 0px;
+            padding-top: 60px;
+    }
+    .complete > .btn-continue{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        width: 300px;
+    }
+}

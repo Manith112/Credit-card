@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./interactive-card-details-form-main/images/favicon-32x32.png">
+    <link rel="stylesheet" href="main.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+        <div class="card-1">
+            
+                <div class="big-circle"></div>
+                <div class="outline-circle"></div>
+            <div class="code">
+                <div class="num">0000 0000 0000 0000</div>
+                <p id="number"></p>
+            </div>
+            <div class="name">
+                <p class="jane">Jane Appleseed</p>
+                <p id="name-output"></p>
+                <div class="cvc">
+                    <p class="month-input">00</p>
+                    <p id="month-output"></p>
+                    <p class="year-input">/00</p>
+                    <p id="year-output"></p>
+                </div>
+
+                <!-- <p id="cvc-output"><span id="month-output"></span><span id="year-output"></span></p> -->
+            </div>
+        </div>
+
+        <div class="card-2">
+           <div class="zero">000</div> 
+           <p id="cvc-output"></p>
+        </div>
+    </div>
+
+    <!-- form fill  -->
+    <div class="form" id="form">
+        <div class="name-fill">
+            <label for="html">Cardholder Name</label>
+            <input type="text" placeholder="e.g. Jane Appleseed" id="name-input" oninput="validateName()">
+            <p id="wrong-name"></p>
+            <p id="empty-name"></p>
+        </div>
+        <div class="name-fill">
+            <label for="" class="card-number">Card Number</label>
+            <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="number-input" oninput="validateNumber()" maxlength="16">
+            <p id="wrong"></p>
+            <p id="empty-number"></p>
+        </div>
+        <div class="date">
+        <div class="date-fill">
+            <label for=""> Exp. Date (MM/YY)</label>
+            <div class="input">
+                <div class="month-time">
+            <input type="text" placeholder="MM" class="date-time" id="month" oninput="monthInput()">
+            <p id="wrong-month"></p>
+            <p id="empty-month"></p>
+        </div>
+        <div class="year-time">
+            <input type="text" placeholder="YY" class="date-time" id="year" oninput="yearInput()">
+            <p id="wrong-year"></p>
+            <p id="empty-year"></p>
+        </div>
+    </div>
+    </div>
+        <div class="date-fill">
+            <label for="" >CVC</label>
+            <input type="text" placeholder="e.g. 123" class="cvc" id="cvc" oninput="cvcInput()">
+            <p id="wrong-cvc"></p>
+            <p id="empty-cvc"></p>
+        </div>
+    </div>
+    <button class="btn" onclick="fillComplete()" id="btn">
+        Confirm
+    </button>
+    </div>
+
+    <!-- complete list  -->
+
+    <div class="complete" id="complete">
+        <img src="./interactive-card-details-form-main/images/icon-complete.svg" alt="">
+        <p class="thank">Thank you!</p>
+        <p class="detail">We've added your card details</p>
+        <button class="btn-continue">
+            Continue
+        </button>
+    </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
